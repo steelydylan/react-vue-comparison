@@ -85,6 +85,35 @@ $ npm run dev
 ### React.js
 </template>
 
+<template layout="code" type="text/x-markdown">
+## React.js
+
+package.json
+
+```js
+"devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.3.13",
+},
+"dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"   
+}
+```
+</template>
+
+<template layout="code" type="text/x-markdown">
+## React.js
+
+browserify
+```js
+"scripts": {
+    "browserify": "browserify ./test/src/index.jsx -t babelify -o ./test/dist/index.js",
+}
+```
+</template>
+
 <template layout="bullets" type="text/x-markdown">
 ## create react app
 フロントエンドの環境づくりの複雑化へのアプローチとしてFacebook社が公式で準備
