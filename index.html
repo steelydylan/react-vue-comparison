@@ -1,0 +1,311 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Talkie.js - HTML/CSS/JavaScript Presentation Library</title>
+  <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie-default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/monokai_sublime.min.css">
+</head>
+<body>
+<style>
+html{
+    font-size:90%;
+}
+[layout=cover] h1{
+    text-transform: none;
+}
+</style>
+
+<!-- put your slides -->
+
+<template layout="cover" type="text/x-markdown">
+# React<br/><small>VS</small><br/> Vue
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## ドキュメント
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## ドキュメント
+### Vue.js
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## Vue.js
+日本語ドキュメントの充実
+
+[https://jp.vuejs.org/](https://jp.vuejs.org/)
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## Vue.js
+日本語ドキュメントの充実
+
+[https://jp.vuejs.org/](https://jp.vuejs.org/)
+</template>
+
+
+<template layout="bullets" type="text/x-markdown">
+## ビルド環境
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## ビルド環境
+### Vue.js
+</template>
+
+<template layout="code" type="text/x-markdown">
+## エコシステムへのサポートの充実
+
+全てのbundle系ツールに対応
+
+- [rollup-plugin-vue (rollup)](https://github.com/vuejs/rollup-plugin-vue#options)
+- [vueify (browserify)](https://github.com/vuejs/vueify#css-extraction)
+- [vue-loader (webpack)](http://vue-loader.vuejs.org/en/configurations/extract-css.html)
+</template>
+
+<template layout="code" type="text/x-markdown">
+Vue.jsは公式でvue-cliというものを提供している
+
+```sh
+# vue-cli をインストール
+$ npm install --global vue-cli
+# "webpack" ボイラープレートを使用した新しいプロジェクトを作成する
+$ vue init webpack my-project
+# 依存関係をインストールしてgo!
+$ cd my-project
+$ npm install
+$ npm run dev
+```
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## テンプレート周り
+</template>
+
+<template layout="code" type="text/x-markdown">
+### Vue.js
+
+HTMLそのまま。ただし、データのbindingにはVue独自の記述が必要
+
+```message-list.vue
+<template>
+  <li class="message-list-item">
+    <h5 class="message-author-name">{{ message.authorName }}</h5>
+    <div class="message-time">
+      {{ message.timestamp | time }}
+    </div>
+    <div class="message-text">{{ message.text }}</div>
+  </li>
+</template>
+```
+</template>
+
+<template layout="code" type="text/x-markdown">
+### React.js
+
+```js
+import React from 'react';
+
+export default class EntryList extends React.Component {
+    const message = this.props.message;
+    render () {
+        return (
+            <li className="message-list-item">
+                <h5 className="message-author-name">{ message.authorName }</h5>
+                <div className="message-time">
+                { getTimeFromTimeStamp(message.timestamp) }
+                </div>
+                <div class="message-text">{ message.text }</div>
+            </li>            
+        )
+    }
+}
+```
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## Style周り
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## Style
+### vue.js
+</template>
+
+<template layout="code" type="text/x-markdown">
+### Vue.js
+普段Styleを書くときと一緒
+
+```html
+<style>
+  .red {
+    color: #f00;
+  }
+</style>
+<template>
+    <h1 class="red">{{msg}}</h1>
+</template>
+```
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## Style
+### React.js
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+### React.js
+CSS in JSにするかCSS modulesを使うかなど
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## ルーティング周り
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## ルーティング周り
+### Vue.js
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## Flux周り
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+## Flux周り
+### 非同期処理
+</template>
+
+<template layout="code" type="text/x-markdown">
+### Vue.js
+
+```js
+const actions = {
+  increment: ({ commit }) => commit('increment'),
+  incrementAsync ({ commit }) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        commit('increment')
+        resolve()
+      }, 1000)
+    })
+  }
+}
+```
+</template>
+
+<template layout="bullets" type="text/x-markdown">
+Reduxは非同期処理を別のライブラリに頼る必要がある
+</template>
+
+<template layout="code" type="text/x-markdown">
+### redux + redux-saga Example
+
+sagas/index.js
+
+```js
+import { increment } from "../actions";
+import { call, put, takeEvery, select } from 'redux-saga/effects'
+const incrementAsync = () => {
+    setTimeout(() => {
+        yield put(increment);
+    }, 1000)
+}
+export default function* rootSaga() {
+  yield takeEvery(types.INCREMENTASYNC, incrementAsync);
+}
+```
+</template>
+
+<template layout="code" type="text/x-markdown">
+### redux + redux-saga Example
+
+reducer/index.js
+
+```js
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case types.INCREMENT:
+      return Object.assign({}, state, { count: state.count + 1 });
+    default:
+      return state;
+}
+```
+</template>
+
+<template layout="code" type="text/x-markdown">
+## 周辺ツール
+</template>
+
+<template layout="code" type="text/x-markdown">
+## 公開されているパッケージ数
+</template>
+
+<template layout="code" type="text/x-markdown">
+## React.js
+
+27078 packages found for "react"
+[https://www.npmjs.com/search?q=react](https://www.npmjs.com/search?q=react)
+</template>
+
+<template layout="code" type="text/x-markdown">
+## Vue.js
+
+3525 packages found for "vue"
+[https://www.npmjs.com/search?q=react](https://www.npmjs.com/search?q=react)
+</template>
+
+<template layout="code" type="text/x-markdown">
+### Nativeアプリへのサポート
+</template>
+
+<template layout="code" type="text/x-markdown">
+### React.js
+[ReactNative](https://facebook.github.io/react-native/)
+</template>
+
+<template layout="code" type="text/x-markdown">
+### React.js
+[https://facebook.github.io/react-native/showcase.html](https://facebook.github.io/react-native/showcase.html)
+Facebookアプリ、Instagramなどで使われている
+MicrosoftのSkypeもReact Nativeを使う予定なんだそう。
+</template>
+
+<template layout="code" type="text/x-markdown">
+### Vue.js
+vue-nativeはでないのか？
+[https://github.com/vuejs/vue/issues/2119](https://github.com/vuejs/vue/issues/2119)
+</template>
+
+
+<template layout="bullets" type="text/x-markdown">
+## 結論
+圧倒的なプラットフォームの違いからReactを使ったほうがいろんなことができそう。
+書き方の違いはあれどそれはすぐに慣れる!!
+</template>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+<script src="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.js"></script>
+<script>
+var talkie = Talkie({wide: false});
+
+talkie.key('s').subscribe(talkie.next$);
+talkie.key('n').subscribe(talkie.next$);
+talkie.key('a').subscribe(talkie.prev$);
+talkie.key('p').subscribe(talkie.prev$);
+
+document.addEventListener('DOMContentLoaded', function() {
+  talkie.changed.subscribe(function(current) {
+    console.clear();
+    // print presenter notes
+    console.info(talkie.notes[current.getAttribute('data-page')]);
+  });
+});
+</script>
+</body>
+</html>
