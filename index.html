@@ -208,10 +208,6 @@ export default class EntryList extends React.Component {
 ## Style周り
 </template>
 
-<template layout="bullets" type="text/x-markdown">
-## Style
-### vue.js
-</template>
 
 <template layout="code" type="text/x-markdown">
 ### Vue.js
@@ -229,15 +225,63 @@ export default class EntryList extends React.Component {
 ```
 </template>
 
-<template layout="bullets" type="text/x-markdown">
-## Style
-### React.js
+<template layout="code" type="text/x-markdown">
+## React.js
+### CSS modules
+
+```css
+.previewWrap{
+    padding: 10px;
+}
+```
 </template>
 
-<template layout="bullets" type="text/x-markdown">
-### React.js
-CSS in JSにするかCSS modulesを使うかなど
+<template layout="code" type="text/x-markdown">
+## React.js
+### CSS modules
+
+```js
+import style from './Preview.scss';
+export default class Preview extends React.Component {
+    render () {
+        const entry = this.props.entry;
+        return (
+            <div className={style.previewWrap}>
+                {entry && entry.markdown ? <Markdown source={entry.markdown} /> : null}
+            </div>
+        )
+    }
+}
+```
 </template>
+
+<template layout="code" type="text/x-markdown">
+## React.js
+### CSS in JS
+```js
+const styles = {
+  button: {
+    padding: '1em',
+
+    ':hover': {
+      border: '1px solid black'
+    },
+  },
+  primary: {
+    background: 'green'
+  }
+};
+```
+</template>
+
+<template layout="code" type="text/x-markdown">
+## React.js
+### CSS in JS
+[https://github.com/MicheleBertoli/css-in-js](https://github.com/MicheleBertoli/css-in-js)
+</template>
+
+
+
 
 <template layout="bullets" type="text/x-markdown">
 ## ルーティング周り
@@ -352,7 +396,7 @@ redux-devtools
 </template>
 
 <template layout="code" type="text/x-markdown">
-### Nativeアプリへのサポート
+## Nativeアプリへのサポート
 </template>
 
 <template layout="code" type="text/x-markdown">
