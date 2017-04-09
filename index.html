@@ -106,6 +106,20 @@ package.json
 <template layout="code" type="text/x-markdown">
 ## React.js
 
+.babelrc
+```js
+{
+  "presets": [
+    "es2015",
+    "react"
+  ]
+}
+```
+</template>
+
+<template layout="code" type="text/x-markdown">
+## React.js
+
 browserify
 ```js
 "scripts": {
@@ -113,6 +127,30 @@ browserify
 }
 ```
 </template>
+
+<template layout="code" type="text/x-markdown">
+## React.js
+
+webpack.config.js
+
+```js
+  module: {
+    loaders: [
+      {
+        test: /\.(js|jsx)$/,
+        loader: ['babel-loader'],
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015', 'react']
+        }
+      }
+    ]
+  }
+```
+```
+</template>
+
+
 
 <template layout="bullets" type="text/x-markdown">
 ## create react app
