@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>React vs Vue</title>
@@ -6,45 +7,61 @@
   <link rel="stylesheet" href="https://unpkg.com/talkiejs@0.11.2/dist/talkie-default.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/monokai_sublime.min.css">
 </head>
+
 <body>
-<style>
-html{
-    font-size:90%;
-}
-[layout=cover] h1{
-    text-transform: none;
-}
-</style>
+  <style>
+    [layout=cover] h1 {
+      text-transform: none;
+    }
+    
+    [layout]>* {
+      margin-right: 0;
+      margin-left: 0;
+    }
+  </style>
 
-<!-- put your slides -->
+  <!-- put your slides -->
 
-<template layout="cover" type="text/x-markdown">
-# React<br/><small>VS</small><br/> Vue
+  <template layout="cover" type="text/x-markdown" invert h-left>
+# React <small>vs</small> Vue
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 # そもそも Vue.js とか React.js って何？
 
 MVCのVつまり、Viewを作ることに特化したUIのためのライブラリ
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
+## アジェンダ
+
+- ドキュメント・情報量
+- ビルド環境
+- テンプレート周り
+- Style周り
+- Flux周り
+- 周辺ツール
+- Nativeアプリへのサポート
+- 結論
+</template>
+
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## ドキュメント・情報量
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## Vue.js
 日本語ドキュメントの充実
 
 [https://jp.vuejs.org/](https://jp.vuejs.org/)
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## React.js
 公式日本語ドキュメントはないが、人気なライブラリな分、情報量が多い
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## React.js
 本も出版されている
 
@@ -52,17 +69,17 @@ MVCのVつまり、Viewを作ることに特化したUIのためのライブラ�
 </template>
 
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## ビルド環境
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## ビルド環境
 ### Vue.js
 </template>
 
-<template layout="code" type="text/x-markdown">
-## エコシステムへのサポートの充実
+  <template layout="code" type="text/x-markdown" invert h-left>
+## bundleツールサポートの充実
 
 全てのbundle系ツールに対応
 
@@ -71,7 +88,7 @@ MVCのVつまり、Viewを作ることに特化したUIのためのライブラ�
 - [vue-loader (webpack)](http://vue-loader.vuejs.org/en/configurations/extract-css.html)
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 Vue.jsは公式でvue-cliというものを提供している
 
 ```sh
@@ -86,12 +103,12 @@ $ npm run dev
 ```
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## ビルド環境
 ### React.js
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## React.js
 
 package.json
@@ -109,7 +126,7 @@ package.json
 ```
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## React.js
 
 .babelrc
@@ -123,7 +140,7 @@ package.json
 ```
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## React.js
 
 browserify
@@ -134,7 +151,7 @@ browserify
 ```
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## React.js
 
 webpack.config.js
@@ -158,18 +175,18 @@ webpack.config.js
 
 
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## create react app
 フロントエンドの環境づくりの複雑化へのアプローチとしてFacebook社が公式で準備
 中ではWebpackなどが動いている
 [https://github.com/facebookincubator/create-react-app](https://github.com/facebookincubator/create-react-app)
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## テンプレート周り
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ### Vue.js
 
 HTMLそのまま。ただし、データのbindingにはVue独自の記述が必要
@@ -183,11 +200,10 @@ HTMLそのまま。ただし、データのbindingにはVue独自の記述が必
     </div>
     <div class="message-text">{{ message.text }}</div>
   </li>
-</template>
-```
-</template>
+</template> ```
+  </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ### React.js
 
 ```js
@@ -202,7 +218,7 @@ export default class EntryList extends React.Component {
                 <div className="message-time">
                 { getTimeFromTimeStamp(message.timestamp) }
                 </div>
-                <div class="message-text">{ message.text }</div>
+                <div className="message-text">{ message.text }</div>
             </li>            
         )
     }
@@ -210,12 +226,12 @@ export default class EntryList extends React.Component {
 ```
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## Style周り
 </template>
 
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## Vue.js
 普段Styleを書くときと一緒
 
@@ -227,11 +243,10 @@ export default class EntryList extends React.Component {
 </style>
 <template>
     <h1 class="red">{{msg}}</h1>
-</template>
-```
-</template>
+</template> ```
+  </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## React.js
 ### CSS modules
 
@@ -242,7 +257,7 @@ export default class EntryList extends React.Component {
 ```
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## React.js
 ### CSS modules
 
@@ -261,7 +276,7 @@ export default class Preview extends React.Component {
 ```
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## React.js
 ### CSS in JS
 ```js
@@ -280,65 +295,47 @@ const styles = {
 ```
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## React.js
 ### CSS in JS
 [https://github.com/MicheleBertoli/css-in-js](https://github.com/MicheleBertoli/css-in-js)
 </template>
 
 
-
-
-<template layout="bullets" type="text/x-markdown">
-## ルーティング周り
-</template>
-
-<template layout="bullets" type="text/x-markdown">
-## ルーティング周り
-### Vue.js
-
-vue-router
-[https://github.com/vuejs/vue-router](https://github.com/vuejs/vue-router)
-</template>
-
-<template layout="bullets" type="text/x-markdown">
-## ルーティング周り
-### React.js
-
-react-router
-[https://github.com/ReactTraining/react-router](https://github.com/ReactTraining/react-router)
-</template>
-
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## Flux周り
+ステート管理のためのツール
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## Flux周り
-### Vue.js
 
-vuex
+
+[ vuex ]
+
 [https://github.com/vuejs/vuex](https://github.com/vuejs/vuex)
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## Flux周り
+
+
 ### React.js
 
-Redux
+[ Redux ]
 [http://redux.js.org/](http://redux.js.org/)
 
-Flux utils
+[ Flux utils ]
 [https://facebook.github.io/flux/docs/flux-utils.html](https://facebook.github.io/flux/docs/flux-utils.html)
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## Flux周り
 ### 非同期処理
 </template>
 
-<template layout="code" type="text/x-markdown">
-### Vue.js
+  <template layout="code" type="text/x-markdown" invert h-left>
+### vuex
 
 ```js
 const actions = {
@@ -355,11 +352,11 @@ const actions = {
 ```
 </template>
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 Reduxは非同期処理を別のライブラリに頼る必要がある
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ### redux + redux-saga Example
 
 sagas/index.js
@@ -378,7 +375,7 @@ export default function* rootSaga() {
 ```
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ### redux + redux-saga Example
 
 reducer/index.js
@@ -394,86 +391,143 @@ export default (state = initialState, action) => {
 ```
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## 周辺ツール
 </template>
 
-<template layout="code" type="text/x-markdown">
-### Vue.js
+  <template layout="code" type="text/x-markdown" invert h-left>
+## Vue.js
 vue-devtools
 [https://github.com/vuejs/vue-devtools](https://github.com/vuejs/vue-devtools)
 </template>
 
-<template layout="code" type="text/x-markdown">
-### React.js
+  <template layout="code" type="text/x-markdown" invert h-left>
+## React.js
 redux-devtools
 [https://github.com/gaearon/redux-devtools](https://github.com/gaearon/redux-devtools)
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## 公開されているパッケージ数
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## React.js
 
 27078 packages found for "react"
+
 [https://www.npmjs.com/search?q=react](https://www.npmjs.com/search?q=react)
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## Vue.js
 
 3525 packages found for "vue"
+
 [https://www.npmjs.com/search?q=react](https://www.npmjs.com/search?q=react)
 </template>
 
-<template layout="code" type="text/x-markdown">
+  <template layout="code" type="text/x-markdown" invert h-left>
 ## Nativeアプリへのサポート
 </template>
 
-<template layout="code" type="text/x-markdown">
-### React.js
+  <template layout="code" type="text/x-markdown" invert h-left>
+## React.js
 [ReactNative](https://facebook.github.io/react-native/)
 </template>
 
-<template layout="code" type="text/x-markdown">
-### React.js
+  <template layout="code" type="text/x-markdown" invert h-left>
+## React.js
 [https://facebook.github.io/react-native/showcase.html](https://facebook.github.io/react-native/showcase.html)
 Facebookアプリ、Instagramなどで使われている
 MicrosoftのSkypeもReact Nativeを使う予定なんだそう。
 </template>
 
-<template layout="code" type="text/x-markdown">
-### Vue.js
+  <template layout="code" type="text/x-markdown" invert h-left>
+## Vue.js
 vue-nativeはでないのか？
 [https://github.com/vuejs/vue/issues/2119](https://github.com/vuejs/vue/issues/2119)
 </template>
 
 
-<template layout="bullets" type="text/x-markdown">
+  <template layout="bullets" type="text/x-markdown" invert h-left>
 ## 結論
-圧倒的なプラットフォームの違いからReactを使ったほうがいろんなことができそう。
-書き方の違いはあれどそれはすぐに慣れる!!
+- Reactを使ったほうが今後いろんなことができそう。
+- 記述はVue.jsの方が楽！
 </template>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
-<script src="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.js"></script>
-<script>
-var talkie = Talkie({wide: false});
+  <template layout="bullets" type="text/x-markdown" invert>
+## Nagoya.jsやってます！
 
-talkie.key('s').subscribe(talkie.next$);
-talkie.key('n').subscribe(talkie.next$);
-talkie.key('a').subscribe(talkie.prev$);
-talkie.key('p').subscribe(talkie.prev$);
+<img src="./images/nagoya-js.png" width="300" />
 
-document.addEventListener('DOMContentLoaded', function() {
-  talkie.changed.subscribe(function(current) {
-    console.clear();
-    // print presenter notes
-    console.info(talkie.notes[current.getAttribute('data-page')]);
-  });
-});
-</script>
+[https://nagoya-js.github.io/](https://nagoya-js.github.io/)
+</template>
+
+
+  <template layout="cover" invert h-left h-left type="text/x-markdown" invert h-left backface="./images/thankyou.jpg" backface-filter="brightness(.5)">
+
+# Thank You!
+
+Twitter: @steelydylan<br>
+GitHub: steelydylan<br>
+
+</template>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+  <script src="https://unpkg.com/talkiejs@0.11.2/dist/talkie.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script>
+    (function($) {
+      var defs = {
+        keyword: "",
+        tag: "span",
+        mark: "highlight",
+        caseSensitive: false
+      };
+      $.fn.findInPage = function(before, next, option) {
+        option = $.extend({}, defs, option);
+        var tag = option.tag;
+        var matchClass = option.mark;
+        var keyword = option.keyword;
+        var caseSensitive = option.caseSensitive;
+        $(this).find('*').addBack().contents().filter(function() {
+          if (this.nodeType === 3) {
+            var elm = this;
+            var text = elm.nodeValue;
+            var cond = "g";
+            if (!caseSensitive) {
+              cond += "i";
+            }
+            text = text.replace(before, next);
+            $(elm).before($.parseHTML(text));
+            $(elm).remove();
+          }
+        });
+      }
+    })(jQuery);
+
+    var talkie = Talkie({
+      wide: false
+    });
+
+    talkie.key('s').subscribe(talkie.next$);
+    talkie.key('n').subscribe(talkie.next$);
+    talkie.key('a').subscribe(talkie.prev$);
+    talkie.key('p').subscribe(talkie.prev$);
+
+    document.addEventListener('DOMContentLoaded', function() {
+      talkie.changed.subscribe(function(current) {
+        console.clear();
+        // print presenter notes
+        console.info(talkie.notes[current.getAttribute('data-page')]);
+        setTimeout(function() {
+          $(current).findInPage(/&gt;/g, ">");
+        }, 100);
+      });
+    });
+  </script>
+
 </body>
+
 </html>
